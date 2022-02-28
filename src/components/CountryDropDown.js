@@ -15,7 +15,7 @@ export default function CountDropDown(props) {
                 value={props.selectedCountry}
                 onChange={handleSelect}>
                 <option value="">None</option>
-                {props.codes.map(country => <option value={country.alpha2}>{country.name}</option>)}
+                {props.codes.map(country => <option key={country.alpha2} value={country.alpha2}>{country.name}</option>)}
             </select>
         </div>
     );

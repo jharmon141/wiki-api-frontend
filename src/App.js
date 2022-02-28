@@ -8,10 +8,12 @@ import helpers from './utils/helpers';
 import moment from 'moment';
 import { codes } from 'iso-country-codes';
 
+const yesterday = () => moment().subtract(1, 'days').format('YYYY-MM-DD');
+
 export default class App extends React.Component {
   state = {
-    date: moment().subtract(1, 'days').format('YYYY-MM-DD'),
-    maxDate: moment().subtract(1, 'days').format('YYYY-MM-DD'),
+    date: yesterday(),
+    maxDate: yesterday(),
     articleCount: '100',
     selectedCountry: '',
     articles: [],
